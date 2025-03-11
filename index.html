@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Synergy Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script>
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+          if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
+            e.preventDefault();
+          }
+        });
+        </script>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            margin: 0; 
+            background-color: var(--light); 
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin: 0.5rem 0;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .hero-carousel {
+            height: 450px;
+            overflow: hidden;
+            position: relative;
+            margin: 20px auto;
+            border-radius: 15px;
+            max-width: 1200px;
+        }
+
+        .hero-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-content h3 {
+            margin: 0 0 1rem;
+            color: var(--primary);
+        }
+
+        .blog-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .about-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .newsletter {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 2px solid var(--secondary);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .newsletter-button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .newsletter-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary);
+            color: white;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Quantum Synergy Blog</h1>
+        <p>Journey Through Thoughts & Experiences</p>
+    </header>
+
+    
+    <div class="hero-carousel">
+        <div class="hero-slide active">
+            <img src="carousel1.jpg" alt="Blog Hero Image 1">
+        </div>
+        <div class="hero-slide">
+            <img src="carousel2.jpg" alt="Blog Hero Image 2">
+        </div>
+        <div class="hero-slide">
+            <img src="carousel3.jpg" alt="Blog Hero Image 3">
+        </div>
+    </div>
+
+    <div class="container">
+        
+
+        <div class="blog-grid">
+            <article class="blog-card" onclick="window.location='blog1.html'">
+                <div class="blog-image">
+                    <img src="carousel2.jpg" alt="Digital Marketing Journey">
+                </div>
+                <div class="blog-content">
+                    <h3>My Journey into Digital Marketing</h3>
+                    <p>Discover how I transitioned from traditional marketing to digital strategies, overcoming challenges and finding success...</p>
+                    <a href="blog1.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-card" onclick="window.location='blog2.html'">
+                <div class="blog-image">
+                    <img src="carousel1.jpg" alt="Quantum Synergy Team">
+                </div>
+                <div class="blog-content">
+                    <h3>Collaboration in Tech Teams</h3>
+                    <p>Exploring the dynamics of successful team collaboration in technology-driven environments...</p>
+                    <a href="blog2.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+            <article class="blog-card" onclick="window.location='blog2.html'">
+                <div class="blog-image">
+                    <img src="carousel1.jpg" alt="Quantum Synergy Team">
+                </div>
+                <div class="blog-content">
+                    <h3>Collaboration in Tech Teams</h3>
+                    <p>Exploring the dynamics of successful team collaboration in technology-driven environments...</p>
+                    <a href="blog2.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-card" onclick="window.location='blog2.html'">
+                <div class="blog-image">
+                    <img src="carousel1.jpg" alt="Quantum Synergy Team">
+                </div>
+                <div class="blog-content">
+                    <h3>Collaboration in Tech Teams</h3>
+                    <p>Exploring the dynamics of successful team collaboration in technology-driven environments...</p>
+                    <a href="blog2.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="carousel3.jpg" alt="Upcoming Blog">
+                </div>
+                <div class="blog-content">
+                    <h3>Cloud Computing Explained</h3>
+                    <p>Stay tuned for my deep dive into cloud technologies and their impact on modern businesses...</p>
+                    <span class="read-more">Coming Soon</span>
+                </div>
+            </article>
+            
+
+            
+
+
+
+        </div>
+
+        <section class="about-section">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>Welcome to my digital space! I'm Gaurav, a passionate storyteller and technology enthusiast. With a background in digital marketing and a love for writing, I created this platform to share my experiences, insights, and occasional ramblings about the tech world.</p>
+                <p>Through these blogs, I aim to document my journey, share valuable lessons learned, and connect with like-minded individuals. When I'm not writing, you'll find me exploring new web technologies, experimenting with photography, or sipping coffee while brainstorming new ideas.</p>
+            </div>
+        </section>
+        
+        <section class="newsletter">
+            <h3>Join Our Insightful Community</h3>
+            <form class="newsletter-form" action="https://formspree.io/f/mvgkobvq" method="POST">
+                <input type="email" name="email" class="newsletter-input" placeholder="Enter your email address" required>
+                <button type="submit" class="newsletter-button">Subscribe Now</button>
+            </form>
+            <p style="margin-top: 1rem; color: #666;">Join 100+ subscribers. No spam ever.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Quantum Synergy Blog. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hero Carousel Script
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(() => showSlide(currentSlide + 1), 5000);
+
+        // Newsletter Form Handling
+        const form = document.querySelector('.newsletter-form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    alert('Thank you for subscribing!');
+                    form.reset();
+                } else {
+                    alert('Oops! Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                alert('Network error. Please check your connection.');
+            }
+        });
+    </script>
+</body>
+</html>

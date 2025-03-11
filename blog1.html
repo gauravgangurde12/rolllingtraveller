@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Digital Marketing Journey | Quantum Synergy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script>
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+          if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
+            e.preventDefault();
+          }
+        });
+        </script>
+    
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.8;
+        }
+
+        .post-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .blog-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+            line-height: 1.3;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .post-content {
+            font-size: 1.1rem;
+            color: #555;
+            margin: 2rem 0;
+        }
+
+        .post-content h2 {
+            color: var(--primary);
+            margin-top: 2.5rem;
+            border-left: 4px solid var(--secondary);
+            padding-left: 1rem;
+        }
+
+        .post-carousel {
+            margin: 3rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .carousel-slide {
+            display: none;
+            animation: fade 1.5s ease-in-out;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .carousel-image:hover {
+            transform: scale(1.02);
+        }
+
+        .video-container {
+            margin: 3rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 25px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Image Modal Styles */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            position: relative;
+            animation: modalFade 0.3s ease-out;
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2.5rem;
+            color: white;
+            cursor: pointer;
+            padding: 1rem;
+            background: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .modal-nav:hover {
+            background: rgba(0,0,0,0.5);
+        }
+
+        .modal-nav.left { left: 20px; }
+        .modal-nav.right { right: 20px; }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            transform: rotate(90deg);
+        }
+
+        @keyframes fade {
+            from { opacity: 0.4 }
+            to { opacity: 1 }
+        }
+
+        @keyframes modalFade {
+            from { opacity: 0; transform: scale(0.8) }
+            to { opacity: 1; transform: scale(1) }
+        }
+    </style>
+</head>
+<body>
+    <div class="post-container">
+        <h1 class="blog-title">My Journey into Digital Marketing</h1>
+
+        <div class="post-content">
+            <p>Starting my journey into digital marketing was an exhilarating yet challenging experience. I began by immersing myself in SEO fundamentals, content strategies, and the dynamic world of social media marketing.</p>
+            
+            <h2>The Learning Curve</h2>
+            <p>My first breakthrough came when I discovered the power of data-driven marketing. Learning tools like Google Analytics and SEMrush opened new dimensions in understanding audience behavior and campaign performance.</p>
+
+            <h2>Key Milestones</h2>
+            <p>The real transformation happened when I started implementing A/B testing strategies. Seeing a 40% increase in conversion rates through simple headline changes was a revelation that changed my approach forever.</p>
+        </div>
+
+        <div class="post-carousel">
+            <div class="carousel-slide active">
+                <img src="carousel1.jpg" class="carousel-image" onclick="openModal(0)">
+            </div>
+            <div class="carousel-slide">
+                <img src="carousel2.jpg" class="carousel-image" onclick="openModal(1)">
+            </div>
+            <div class="carousel-slide">
+                <img src="carousel3.jpg" class="carousel-image" onclick="openModal(2)">
+            </div>
+        </div>
+
+        <div class="video-container">
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/oaJIkGhAf7U" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left" style="margin-right: 10px;"></i>
+            Back to Home
+        </a>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <span class="modal-nav left" onclick="changeImage(-1)">❮</span>
+        <img class="modal-content" id="modalImage">
+        <span class="modal-nav right" onclick="changeImage(1)">❯</span>
+    </div>
+
+    <script>
+        // Carousel Auto-Advance
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        
+        function advanceSlide() {
+            slides[slideIndex].classList.remove('active');
+            slideIndex = (slideIndex + 1) % slides.length;
+            slides[slideIndex].classList.add('active');
+        }
+        let carouselInterval = setInterval(advanceSlide, 5000);
+
+        // Image Modal Functions
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.carousel-image');
+
+        function openModal(index) {
+            currentImageIndex = index;
+            document.getElementById('imageModal').style.display = 'flex';
+            document.getElementById('modalImage').src = images[currentImageIndex].src;
+            clearInterval(carouselInterval);
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+            carouselInterval = setInterval(advanceSlide, 5000);
+        }
+
+        function changeImage(direction) {
+            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+            document.getElementById('modalImage').src = images[currentImageIndex].src;
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('imageModal')) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
