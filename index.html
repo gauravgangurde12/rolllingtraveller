@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Threads of Thoughts</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -333,8 +333,8 @@
             min-width: 60%; /* Ensures text remains readable */
         }
         
-        /* Responsive Design */
-        @media (max-width: 768px) {
+        /* Responsive Design old */
+        /* @media (max-width: 768px) {
             .about-content {
                 flex-direction: column;
                 align-items: center;
@@ -358,7 +358,86 @@
             .bio-text {
                 line-height: 1.6;
             }
+        } */
+
+        /* new media     */
+        @media (max-width: 768px) {
+        /* Fix newsletter form */
+        .newsletter-form {
+            flex-direction: column;
+            gap: 1rem;
         }
+        
+        .newsletter-input,
+        .newsletter-button {
+            width: 100% !important;
+        }
+
+        /* Footer adjustments */
+        footer {
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Prevent zoom layout shift */
+        .container {
+            width: 95%;
+            margin: 1rem auto;
+            padding: 0 0.5rem;
+        }
+
+        /* Post container adjustments */
+        .post-container {
+            padding: 1.5rem;
+            margin: 1rem auto;
+            width: 95%;
+        }
+
+        /* Carousel mobile fix */
+        .carousel-image {
+            height: 60vh;
+            object-fit: contain;
+        }
+
+        /* About section mobile layout */
+        .about-content {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Like button mobile fix */
+        #likeBtn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* Footer text scaling */
+        footer p {
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        /* Prevent horizontal scroll */
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* Subscribe button final fix */
+        .newsletter-button {
+            padding: 12px 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Blog title adjustment */
+        .blog-title {
+            font-size: 2rem;
+            line-height: 1.2;
+        }
+    }
         </style>
 
         

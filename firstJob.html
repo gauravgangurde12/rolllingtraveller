@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Day Follies | Thread of Thoughts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>First Day Follies | Threads of Thoughts</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -202,6 +202,65 @@
             from { opacity: 0; transform: scale(0.8) }
             to { opacity: 1; transform: scale(1) }
         }
+
+
+                /* Add at top of CSS */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+            /* Add this at the BOTTOM of your <style> section */
+@media (max-width: 768px) {
+    .post-container {
+        width: 95%;
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    .carousel-image {
+        height: 50vh;
+        object-fit: contain;
+    }
+
+    .video-container iframe {
+        height: 50vh;
+    }
+
+    .back-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .image-modal .modal-content {
+        max-width: 95vw;
+    }
+
+    .modal-nav {
+        font-size: 2rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-title {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    .post-content {
+        font-size: 1rem;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+        padding: 0 1rem;
+        line-height: 1.4;
+    }
+}
     </style>
 </head>
 <body>
