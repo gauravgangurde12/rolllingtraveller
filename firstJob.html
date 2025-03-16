@@ -6,15 +6,24 @@
     <title>First Day Follies | Threads of Thoughts</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="IndexResources/faviconImage.png" type="/png">
     
-    <script>
+    <meta name="description" content="Threads of Thoughts | I aim to document my journey, share valuable lessons learned, and connect with like-minded individuals. When I'm not writing, you'll find me exploring new web technologies, experimenting with photography, or sipping coffee while brainstorming new ideas.">
+
+    <!-- Meta Keywords (Not used by Google but helpful for minor search engines) -->
+    <meta name="keywords" content="threads of thoughts, blog , laalPari, SEO, website, netlify, threadsofthoughts, threadsofthoughtsblog, gaurav blog, firstjob, firstday at job, lerning experience, gaurav">
+
+    <!-- Author Information -->
+    <meta name="author" content="Gaurav">
+    <!-- right click disable code -->
+    <!-- <script>
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.addEventListener('keydown', e => {
           if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
             e.preventDefault();
           }
         });
-        </script>
+        </script> -->
     
     <style>
         :root {
@@ -175,11 +184,7 @@
             transform: rotate(90deg);
         }
 
-        /* Some change  */
-        .like-section {
-            z-index: 1; /* Ensure particles stay above other content */
-            position: relative;
-        }
+        
 
         /* Change 3 Footer Count of Visitors */
         footer {
@@ -329,122 +334,9 @@
             </div> -->
         </div>
 
-        <!-- Change 2 Like Button Animation -->
-        <!-- Like Button firebase -->
-        <!-- <div class="like-section">
-            <button id="likeBtn" onclick="handleLike()">
-              <i class="fas fa-heart"></i>
-              <span id="likeCount">0</span>
-            </button>
-          </div> -->
+       
 
-          <!-- Add this to your CSS -->
-            <style>
-                .like-section {
-                    text-align: center;
-                    margin: 2rem 0;
-                }
-                
-                #likeBtn {
-                    background: none;
-                    border: none;
-                    padding: 12px 24px;
-                    border-radius: 30px;
-                    cursor: pointer;
-                    position: relative;
-                    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                    background: linear-gradient(145deg, #ffffff, #f3f4f6);
-                    box-shadow: 5px 5px 10px #d1d1d1,
-                            -5px -5px 10px #ffffff;
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                    font-size: 1.1rem;
-                }
-                
-                #likeBtn:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 8px 8px 15px #d1d1d1,
-                            -8px -8px 15px #ffffff;
-                }
-                
-                #likeBtn:active {
-                    transform: translateY(1px);
-                }
-                
-                #likeBtn.liked {
-                    animation: heartBeat 0.6s ease;
-                    color: #df3d2b;
-                }
-                
-                #likeBtn.liked i {
-                    animation: burst 0.8s ease-out;
-                }
-                
-                #likeBtn[disabled] {
-                    cursor: not-allowed;
-                    opacity: 0.9;
-                }
-                
-                #likeBtn i {
-                    color: #95a5a6;
-                    transition: color 0.3s ease;
-                }
-                
-                #likeBtn.liked i {
-                    color: #e74c3c;
-                }
-                
-                @keyframes heartBeat {
-                    0% { transform: scale(1); }
-                    30% { transform: scale(1.2); }
-                    50% { transform: scale(0.95); }
-                    70% { transform: scale(1.1); }
-                    100% { transform: scale(1); }
-                }
-                
-                @keyframes burst {
-                    0% {
-                        opacity: 0;
-                        transform: scale(0);
-                    }
-                    50% {
-                        opacity: 1;
-                        transform: scale(1.5);
-                    }
-                    100% {
-                        opacity: 0;
-                        transform: scale(2);
-                    }
-                }
-                
-                .like-count {
-                    font-weight: 600;
-                    transition: all 0.3s ease;
-                }
-                
-                /* Floating particles effect */
-                .like-particle {
-                    position: absolute;
-                    width: 8px;
-                    height: 8px;
-                    background: #e74c3c;
-                    border-radius: 50%;
-                    pointer-events: none;
-                    animation: float 1s ease-out forwards;
-                }
-                
-                @keyframes float {
-                    0% {
-                        opacity: 1;
-                        transform: translateY(0) scale(1);
-                    }
-                    100% {
-                        opacity: 0;
-                        transform: translateY(-50px) scale(0);
-                    }
-                }
-                </style>
+          
                 
                 <!-- Updated Like Button HTML -->
                 <div class="like-section">
@@ -453,37 +345,6 @@
                         <span class="like-count" id="likeCount">0</span>
                     </button>
                 </div>
-                
-                <!-- Update the handleLike function in your script -->
-                <script>
-                async function handleLike() {
-                    if(localStorage.getItem('liked-blog1')) return;
-                    
-                    const btn = document.getElementById('likeBtn');
-                    btn.classList.add('liked');
-                    btn.disabled = true;
-                    
-                    // Add particle effect
-                    for(let i = 0; i < 6; i++) {
-                        const particle = document.createElement('div');
-                        particle.className = 'like-particle';
-                        particle.style.left = `${Math.random() * 80 + 10}%`;
-                        particle.style.animationDelay = `${i * 0.1}s`;
-                        btn.appendChild(particle);
-                    }
-                    
-                    likeCount++;
-                    await db.collection("likes").doc("blog1").set({ count: likeCount });
-                    document.getElementById('likeCount').textContent = likeCount;
-                    
-                    // Remove particles after animation
-                    setTimeout(() => {
-                        btn.querySelectorAll('.like-particle').forEach(p => p.remove());
-                    }, 1000);
-                    
-                    localStorage.setItem('liked-blog1', 'true');
-                }
-                </script>
 
         <!-- <div class="video-container">
             <iframe width="100%" height="400" src="https://www.youtube.com/embed/oaJIkGhAf7U" frameborder="0" allowfullscreen></iframe>
@@ -538,6 +399,101 @@
         // Initial load
         getLikes();
 </script>
+
+
+    <!-- Sharing Button -->
+     
+
+        <!-- Sharing Button -->
+
+        <!-- Add this CSS -->
+<style>
+    .share-section {
+        margin: 2rem 0;
+        text-align: center;
+    }
+    
+    .share-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .share-btn {
+        padding: 12px 24px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .whatsapp-btn {
+        background: #25D366;
+        color: white;
+    }
+    
+    .instagram-btn {
+        background: #E1306C;
+        color: white;
+    }
+    
+    .x-btn {
+        background: #000000;
+        color: white;
+    }
+    
+    .share-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    
+    .share-btn i {
+        font-size: 1.2rem;
+    }
+    </style>
+    
+    <!-- Add this HTML where you want sharing buttons -->
+    <div class="share-section">
+        <div class="share-buttons">
+            <!-- WhatsApp -->
+            <a class="share-btn whatsapp-btn" href="#" onclick="shareOnWhatsApp()">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp
+            </a>
+    
+            
+    
+            <!-- X (Twitter) -->
+            <a class="share-btn x-btn" href="#" onclick="shareOnX()">
+                <i class="fab fa-x-twitter"></i>
+                X
+            </a>
+        </div>
+    </div>
+    
+    <script>
+    // Social Sharing Functions
+    function shareOnWhatsApp() {
+        const text = encodeURIComponent("Check out this blog: " + document.title + " " + window.location.href);
+        window.open(`https://wa.me/?text=${text}`, '_blank');
+    }
+    
+    function shareOnX() {
+        const text = encodeURIComponent("Check out this blog: " + document.title);
+        const url = encodeURIComponent(window.location.href);
+        window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=Blogging,Thoughts`, '_blank');
+    }
+    
+    
+    </script>
+
 
 
 
@@ -607,5 +563,105 @@
         <p>&copy; 2025 Threads of Thoughts Blog. All rights reserved.</p>
         
     </footer>
+
+
+    <!-- Like Button animation Script -->
+
+    <style>
+        /* Like Button Container */
+        .like-section {
+            position: relative;
+            z-index: 1;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        /* Button Styling */
+        #likeBtn {
+            position: relative;
+            overflow: visible; /* Changed from hidden */
+            background: #fff;
+            border: 2px solid #e74c3c;
+            color: #e74c3c;
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Animation Fixes */
+        #likeBtn.liked {
+            animation: heartBeat 0.8s ease;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            20% { transform: scale(1.3) rotate(-5deg); }
+            40% { transform: scale(0.95) rotate(3deg); }
+            60% { transform: scale(1.15) rotate(-3deg); }
+            80% { transform: scale(0.98) rotate(2deg); }
+            100% { transform: scale(1) rotate(0); }
+        }
+        
+        /* Particle Fixes */
+        .like-particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #e74c3c;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1; /* Send particles behind button */
+            animation: float 1s ease-out forwards;
+        }
+        </style>
+        
+        <!-- JavaScript Fix -->
+        <script>
+        async function handleLike() {
+            if(localStorage.getItem('liked-blog1')) return;
+            
+            const btn = document.getElementById('likeBtn');
+            
+            // Trigger animations first
+            btn.classList.add('liked');
+            
+            // Add particles
+            for(let i = 0; i < 6; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'like-particle';
+                particle.style.left = `${Math.random() * 80 + 10}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${i * 0.1}s`;
+                btn.parentElement.appendChild(particle); // Add to container
+            }
+        
+            // Update Firebase after animation starts
+            btn.disabled = true;
+            likeCount++;
+            document.getElementById('likeCount').textContent = likeCount;
+            
+            try {
+                await db.collection("likes").doc("blog1").set({ count: likeCount });
+            } catch (error) {
+                console.error('Error updating likes:', error);
+            }
+            
+            // Cleanup after animations
+            setTimeout(() => {
+                btn.classList.remove('liked');
+                document.querySelectorAll('.like-particle').forEach(p => p.remove());
+            }, 2000);
+            
+            localStorage.setItem('liked-blog1', 'true');
+        }
+        </script>
+
 </body>
 </html>

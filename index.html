@@ -6,15 +6,26 @@
     <title>Threads of Thoughts</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="IndexResources/faviconImage.png" type="/png">
     
-    <script>
+
+    <!-- Meta Description (Helps with Click-Through Rate) -->
+    <meta name="description" content="Threads of Thoughts | I aim to document my journey, share valuable lessons learned, and connect with like-minded individuals. When I'm not writing, you'll find me exploring new web technologies, experimenting with photography, or sipping coffee while brainstorming new ideas.">
+
+    <!-- Meta Keywords (Not used by Google but helpful for minor search engines) -->
+    <meta name="keywords" content="threads of thoughts, blog , laalPari, SEO, website, netlify, threadsofthoughts, threadsofthoughtsblog, gaurav blog, firstjob, firstday at job, lerning experience, gaurav">
+
+    <!-- Author Information -->
+    <meta name="author" content="Gaurav">
+    <!-- right click disable -->
+    <!-- <script>
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.addEventListener('keydown', e => {
           if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
             e.preventDefault();
           }
         });
-        </script>
+        </script> -->
     <style>
         :root {
             --primary: #2c3e50;
@@ -51,12 +62,16 @@
         }
 
         .hero-carousel {
-            height: 450px;
+            height: 420px;
             overflow: hidden;
             position: relative;
             margin: 20px auto;
             border-radius: 15px;
-            max-width: 1200px;
+            max-width: 1200px100vw;
+            
+            margin: 20px 15px;
+    border-radius: 15px;
+    overflow: hidden;
         }
 
         .hero-slide {
@@ -76,6 +91,7 @@
             height: 100%;
             object-fit: cover;
             border-radius: 15px;
+            max-height: 55vh;
         }
 
         .container {
@@ -169,7 +185,7 @@
 
         .newsletter-input {
             flex: 1;
-            padding: 12px 20px;
+            padding: 12px 8px;
             border: 2px solid var(--secondary);
             border-radius: 8px;
             font-size: 1rem;
@@ -264,17 +280,17 @@
                     <p>Exploring the dynamics of successful team collaboration in technology-driven environments...</p>
                     <a href="blog2.html" class="read-more">Read More →</a>
                 </div>
-            </article>
+            </article> -->
             <article class="blog-card">
                 <div class="blog-image">
-                    <img src="carousel3.jpg" alt="Upcoming Blog">
+                    <img src="ComingUpResources/comingupImage.jpg" alt="Upcoming Blog">
                 </div>
                 <div class="blog-content">
-                    <h3>Cloud Computing Explained</h3>
-                    <p>Stay tuned for my deep dive into cloud technologies and their impact on modern businesses...</p>
+                    <h3>First Day at College</h3>
+                    <p>Stay tuned for my First Day at College</p>
                     <span class="read-more">Coming Soon</span>
                 </div>
-            </article> -->
+            </article> 
             
 
             
@@ -297,15 +313,113 @@
             <div class="about-content">
                 <img src="myimage2.jpeg" alt="Gaurav - Blog Author" class="author-image">
                 <div class="bio-text">
-                    <p>Welcome to my digital space! I'm Gaurav, a passionate storyteller and technology enthusiast. With a background in software engineering & digital marketing and a love for writing, I created this platform to share my experiences, insights, and occasional ramblings about the world around me.</p>
+                    <p>Welcome to my digital space! I'm Gaurav, a technology enthusiast. With a background in software engineering & digital marketing and a love for writing, I created this platform to share my experiences, insights, and occasional ramblings about the world around me.</p>
                     <p>Through these blogs, I aim to document my journey, share valuable lessons learned, and connect with like-minded individuals. When I'm not writing, you'll find me exploring new web technologies, experimenting with photography, or sipping coffee while brainstorming new ideas.</p>
                 </div>
             </div>
         </section>
         
+
+
+        <!-- Sharing Button -->
+
+        <!-- Add this CSS -->
+<style>
+    .share-section {
+        margin: 2rem 0;
+        text-align: center;
+    }
+    
+    .share-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .share-btn {
+        padding: 12px 24px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .whatsapp-btn {
+        background: #25D366;
+        color: white;
+    }
+    
+    .instagram-btn {
+        background: #E1306C;
+        color: white;
+    }
+    
+    .x-btn {
+        background: #000000;
+        color: white;
+    }
+    
+    .share-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    
+    .share-btn i {
+        font-size: 1.2rem;
+    }
+    </style>
+    
+    <!-- Add this HTML where you want sharing buttons -->
+    <div class="share-section">
+        <div class="share-buttons">
+            <!-- WhatsApp -->
+            <a class="share-btn whatsapp-btn" href="#" onclick="shareOnWhatsApp()">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp
+            </a>
+    
+            
+    
+            <!-- X (Twitter) -->
+            <a class="share-btn x-btn" href="#" onclick="shareOnX()">
+                <i class="fab fa-x-twitter"></i>
+                X
+            </a>
+        </div>
+    </div>
+    
+    <script>
+    // Social Sharing Functions
+    function shareOnWhatsApp() {
+        const text = encodeURIComponent("Check out this blog: " + document.title + " " + window.location.href);
+        window.open(`https://wa.me/?text=${text}`, '_blank');
+    }
+    
+    function shareOnX() {
+        const text = encodeURIComponent("Check out this blog: " + document.title);
+        const url = encodeURIComponent(window.location.href);
+        window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=Blogging,Thoughts`, '_blank');
+    }
+    
+    
+    </script>
+
+
+
         <style>
         .about-section {
-            margin: 2rem 0;
+            /* margin: 2rem 0; */
+            text-align: center;
+            padding: 2rem;
+            margin: 3rem auto;
+            max-width: 800px;
         }
         
         .about-content {
@@ -316,56 +430,47 @@
         }
         
         .author-image {
-            width: 150px;
-            height: 150px;
+            
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--secondary);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            flex-shrink: 0;
+            border: 4px solid var(--secondary);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin: 0 auto 2rem;
+            display: block;
+            transition: transform 0.3s ease;
+            aspect-ratio: 1/1;
         }
         
         .bio-text {
             flex: 1;
-            font-size: 1rem;
-            line-height: 1.7;
+            font-size: 1.1rem;
+            line-height: 1.8;
             color: #555;
             min-width: 60%; /* Ensures text remains readable */
+            text-align: justify;
+            padding: 0 2rem;
         }
-        
-        /* Responsive Design old */
-        /* @media (max-width: 768px) {
-            .about-content {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-            
-            .author-image {
-                width: 120px;
-                height: 120px;
-                margin-bottom: 0.5rem;
-            }
-            
-            .bio-text {
-                width: 100%;
-                text-align: justify;
-                font-size: 0.95rem;
-            }
+        .author-image:hover {
+            transform: scale(1.05);
         }
-        
-        @media (max-width: 480px) {
-            .bio-text {
-                line-height: 1.6;
-            }
-        } */
+
 
         /* new media     */
         @media (max-width: 768px) {
         /* Fix newsletter form */
+        /* .hero-carousel {
+            margin: 10px;
+        }
+        
+        .hero-slide img {
+            padding: 15px;
+            max-height: 50vh;
+        } */
         .newsletter-form {
             flex-direction: column;
-            gap: 1rem;
+            /* gap: 1rem; */
         }
         
         .newsletter-input,
@@ -411,6 +516,15 @@
             width: 100%;
             justify-content: center;
         }
+        author-image {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 1.5rem;
+        }
+        
+        .bio-text {
+            padding: 0 1rem;
+        }
     }
 
     @media (max-width: 480px) {
@@ -436,6 +550,10 @@
         .blog-title {
             font-size: 2rem;
             line-height: 1.2;
+        }
+        .author-image {
+            width: 160px;
+            height: 160px;
         }
     }
         </style>
